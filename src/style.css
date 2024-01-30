@@ -1,0 +1,142 @@
+@media screen and (max-width:765px) and (min-width: 373px) {
+
+    /* hamburger menu  */
+  
+    #navlink{
+      display: none;
+    }
+    .bm-menu-wrap, .bm-overlay{
+      display: block;  
+    }
+    .bm-menu-wrap{
+      width: 150px;
+    }
+  .bm-cross-button{
+      right: 1px; 
+      top: 8px;
+  } 
+   #react-burger-cross-btn{
+    right: 1px;
+  }
+  
+    /* HamburgerMenu.css */
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    right: 20px;
+    top: 10px;
+    display: block;
+  }
+  
+  .bm-burger-bars {
+    background: #dde0f0;
+  }
+  
+  .bm-burger-bars-hover {
+    background: #f1acac;
+  }
+  
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .bm-cross {
+    background: #424445;
+  }
+  
+  .bm-menu {
+    background: aliceblue;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  
+  .bm-item {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .bm-item a {
+    color: #b8b7ad;
+    text-decoration: none;
+  }
+  
+  .bm-item:hover {
+    background-color: #f1a2a2;
+  }
+  
+  .bm-item.active {
+    color: #a90000;
+  }
+  
+
+  /* home top image  */
+  /* _____________________________________________________ */
+  .newhomeimage{
+    display: grid;
+    grid-template-columns: 50vh;
+    grid-template-rows: repeat(3 , 35vh);
+
+  }
+  .homeimage1{
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  .homeimage2{
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .homeimage3{
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+  /* _____________________________________________________ */
+  
+  /* bollywood component  */
+  .parentside{
+    display: flex;
+    flex-direction: column;
+  }
+.parentcontent{
+    flex-direction: column;
+    align-items: center;
+}
+.leftchild, .righttchild{
+    width: 100%;
+
+}
+.imageheight {
+    width: 45vh;
+    height: 25vh;
+    border-radius: 15px;
+}
+
+
+
+/* advertisement */
+
+.advertisement {
+    margin: auto;
+    height: 51vh;
+    width: 45vh;
+}
+.advertimg {
+    width: 45vh;
+    height: 25vh;
+}
+.advertimg2 {
+    width: 45vh;
+    height: 25vh;
+}
+.smalltopost {
+    flex-direction: column;
+    align-items: center;
+}
+.firstsmalltoppost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  }
