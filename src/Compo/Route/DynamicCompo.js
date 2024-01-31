@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Store } from '../Store/Store'
-import { useNavigate, useParams } from 'react-router-dom'
+import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
@@ -29,8 +29,10 @@ const DynamicCompo = () => {
               </div>
             </div>
             <div className='dynmparentcart'>
-            <div className='dynmaddcart'><FontAwesomeIcon className='icon3 cartsmall' icon={faCartShopping}/>ADD TO CART</div>
-            <div className='dynmbuynow'><FontAwesomeIcon icon={faBolt} />BUY NOW</div>
+            <NavLink to={`/cart/${item.id}`}><div className='dynmaddcart' onClick={()=>Navi('/cart')}><FontAwesomeIcon className='icon3 cartsmall' icon={faCartShopping}/>ADD TO CART</div></NavLink>
+            <NavLink to={`/cart/${item.id}`}>
+            <div className='dynmbuynow' onClick={()=>Navi('/cart')}><FontAwesomeIcon icon={faBolt} />BUY NOW</div>
+            </NavLink>
             </div>
 
 

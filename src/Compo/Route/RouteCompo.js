@@ -10,6 +10,7 @@ import Laptop from './Laptop'
 import Camera from './Camera'
 import Fashion from './Fashion'
 import Appliance from './Appliance'
+import Cart from './Cart';
 import Topnavbar from './Topnavbar';
 
 const RouteCompo = () => {
@@ -39,6 +40,7 @@ const RouteCompo = () => {
                 <Route path='/appliance' element={<Appliance/>}/>
                 <Route path='/dynamic/:id' element={<DynamicCompo/>}/>
                 <Route path='/login' element={<Loginregister/>}/>
+                <Route path='/cart/:id' element={<Cart/>}/>
                 <Route path='/' element={<Topnavbar/>}/>
             </Routes>
         </DataCompo>
