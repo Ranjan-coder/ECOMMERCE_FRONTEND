@@ -322,7 +322,27 @@ align-items: center;
   border: 1px solid #f6a5a5;
   background-color: #f6a5a5;
 }
-
+.homeiconftr{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10vh;
+  width: 190vh;
+  margin: auto;
+}
+.homeiconftr1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.homeiconftr2{
+  /* font-size: larger; */
+  font-weight: 500;
+}
+.homeiconftr3{
+  text-align: center;
+}
 
 
 
