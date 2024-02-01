@@ -25,6 +25,14 @@ const DynamicCompo = () => {
               <div id='dynmheading'>{item.name}</div>
               <div id='dynmrating'>{item.rating}</div>
               <div id='dynmprice'>{item.price}</div>
+              <ul>
+                <li>Special PriceGet extra ₹9000 off (price inclusive of cashback/coupon) T&C</li>
+                <li>FreebieSpotify Premium - 12M at ₹699 T&C</li>
+                <li>Buy for 2000 get ₹500 off your Next Buy T&C</li>
+                <li>No cost EMI ₹5,000/month. Standard EMI also available View Plans</li>
+                <li>Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</li>
+              </ul>
+              <div>Product Description : </div>
               <p id='dynmdesc'>{item.description}</p>
               </div>
             </div>

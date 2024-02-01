@@ -5,12 +5,14 @@ const FooterCmp = () => {
         <div className='footerbgc'>
             <div className='footerleft'>
             <div className='firstftrdata'>
-                <div>𝐼𝒮𝐻𝒪𝒫</div>
+                {/* <div>𝐼𝒮𝐻𝒪𝒫</div> */}
+                <div className='ftrleterheading'>ISHOP</div>
                 <div className='hrline'></div>
                 <p className='ftrpara' >At iShop, we're dedicated to bringing you the best shopping experience online. Whether you're browsing for the latest fashion trends, hunting for tech gadgets, or seeking unique gifts, we've got you covered.</p>
             </div>
             <div className='ftrdatafollowus'>
-                <div>𝐹𝒪𝐿𝐿𝒪𝒲 𝒰𝒮</div>
+                {/* <div>𝐹𝒪𝐿𝐿𝒪𝒲 𝒰𝒮</div> */}
+                <div className='ftrleterheading'>FOLLOW US</div>
                 <div className='hrline'></div>
                 <p className='ftrpara' >Join the iShop community and stay connected with us on social media! Follow us for the latest updates, exclusive offers, behind-the-scenes peeks, and so much more.</p>
             
@@ -33,7 +35,8 @@ const FooterCmp = () => {
             </div>
             </div>
             <div className='firstdatcontact'>
-                <div>𝒞𝒪𝒩𝒯𝒜𝒞𝒯 𝒰𝒮</div>
+                {/* <div>𝒞𝒪𝒩𝒯𝒜𝒞𝒯 𝒰𝒮</div> */}
+                <div className='ftrleterheading'>CONTACT US</div>
                 <div className='hrline'></div>
                 <p className='ftrpara' >Have a question or need assistance? Our friendly customer support team is here to help! Reach out to us via phone, email, or live chat, and we'll ensure your shopping experience at iShop is nothing short of exceptional.</p>
             </div>
