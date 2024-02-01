@@ -6,8 +6,8 @@ import shiping from '../Imageh/shiping.gif'
 import refund from '../Imageh/refund.jpg'
 import service from '../Imageh/service.jpg'
 import Appslider from './Imagesliderweb'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleDollarToSlot, faHeadset, faTruckFast } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCircleDollarToSlot, faHeadset, faTruckFast } from '@fortawesome/free-solid-svg-icons'
 
 
 const Home = () => {
