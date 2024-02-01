@@ -20,9 +20,11 @@ const handleLoginRegister=()=>{
             <div id='searchbtm'><FontAwesomeIcon icon={faSearch} />
             </div>
           </div>
-            <div className='icon2' onClick={handleLoginRegister}><FontAwesomeIcon className='icon2' icon={faUser}/></div>
-            
+          <div className='navbaricon'>
+            <div className='icon21' onClick={handleLoginRegister}><FontAwesomeIcon className='icon2' icon={faUser}/></div>
+
           <div className='icon3' onClick={()=>Navigate('/cart')}><FontAwesomeIcon className='icon3' icon={faCartShopping}/></div>
+          </div>
         </div>
       </div>
     </>
