@@ -3,9 +3,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import sprite from "./sprite.svg";
 
 const images = [
-  "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345767/demo_image2.jpg",
-  "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652366604/demo_image5.jpg",
-  "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345874/demo_image1.jpg",
+  "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/571011e572c5967d.jpg?q=20",
+  "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/36edcda6bdf9ca8a.jpg?q=20",
+  "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/18e18469fdc3e871.jpg?q=20",
+  "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/f91a7f06c29042a0.jpg?q=20",
+  
 ];
 
 function Appslider() {
@@ -106,7 +108,7 @@ function Appslider() {
       >
         {images.map((URL, index) => (
           <div className="slide">
-            <img alt="sample_file" src={URL} key={index} />
+            <img alt="sample_file" src={URL} key={index} style={{height:"50vh"}} />
           </div>
         ))}
       </Carousel>

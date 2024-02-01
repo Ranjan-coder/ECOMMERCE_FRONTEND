@@ -8,6 +8,10 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 } */
+body{
+  background-color: #eaf8fc;
+  /* background-color: #dbf0f7; */
+}
 .box {
   max-width: 500px;
   margin: auto;
@@ -67,7 +71,9 @@
 .ind:not(:last-child) {
   margin-right: 1.4rem;
 }
-
+.carousel .thumbs{
+  display: none;
+}
 .carousel .carousel-status {
   left: 0;
   right: 0;
@@ -91,7 +97,7 @@
   display: flex;
   justify-content: space-around;
   /* gap: 110vh; */
-  background-color: #545d66;
+  background-color: #bcdfeb;
   height: 15vh;
   /* position: sticky;
   top: 0.1px; */
@@ -161,7 +167,7 @@
 
 }
 .loginlogo{
-  width: 50vh;
+  width: 59vh;
   height: 25vh;
   border-radius: 15px;
 }
@@ -178,7 +184,14 @@
 }
 .registerdetails1{
   justify-content: space-between;
-  height: 35vh;
+  height: 65vh;
+}
+.signupimg{
+  /* width: 110vh; */
+  width: 80vh;
+  border-radius: 10px;
+  /* margin-top: 5px; */
+  height: 33vh;
 }
 .submit{
   height: 6vh;
@@ -230,12 +243,21 @@ button:hover{
   /* margin-left: 20px; */
 }
 
+/* hamburger  */
+.bm-menu-wrap, .bm-overlay,.bm-burger-button{
+  display: none;
+
+}
 
 /* dynamic component  */
 .dynmparent{
   display: flex;
   gap: 10vh;
   margin: 10vh;
+}
+#dynmimg{
+  height: 50vh;
+  width: 75vh;
 }
 #dynmrating{
   height: 5vh;
@@ -255,6 +277,21 @@ button:hover{
   font-size: larger;
   font-weight: 450;
   font-size: x-large;
+}
+#dynmbtm{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+#dynmrevbtm{
+  color: #2f046f;
+  height: 50px;
+  width: 190px;
+  border: 2px solid red;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: 500;
 }
 .dynmparentcart{
   display: flex;
@@ -278,8 +315,10 @@ button:hover{
 .cartsmall{
   height: 20px;
 }
-.videocontent{
+.imagegif{
   display: flex;
+  margin-top: 10vh;
+  justify-content: center;
 }
 
 /* Home data content  */
@@ -294,14 +333,20 @@ align-items: center;
   align-items: center;
   justify-content: center;
   gap: 5vh;
+  margin-top: 5vh;
 }
 #homedatacontent{
   width: 35vh;
+  /* width: 50vh; */
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: aliceblue;
+  border-radius: 9px;
+  box-shadow: 1px 1px 5px #c5f5c5;
+  /* background-image: url('./Compo/Imageh/backgrounditemsky.jpg'); */
 }
 #homedatacontent:hover{
   scale: 1.05;
@@ -327,8 +372,9 @@ align-items: center;
   justify-content: space-around;
   align-items: center;
   gap: 10vh;
-  width: 190vh;
+  width: 210vh;
   margin: auto;
+  background-color: #f7e5ba;
 }
 .homeiconftr1{
   display: flex;
@@ -343,27 +389,65 @@ align-items: center;
 .homeiconftr3{
   text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.toppost {
-  font-size: larger;
+.mygif{
+  width: 210vh;
+  height: 85vh;
+}
+.itemrating{
+  height: 5vh;
+  width: 10vh;
+  margin: auto;
+  color: white;
+  background-color: rgb(26, 227, 26);
+  border-radius: 10px;
+}
+.itemprice,.footerrightheading{
+  font-size: large;
   font-weight: 500;
-  /* color: aliceblue; */
-  width: max-content;
 }
-.hometoppost{
-  margin-top: 30px;
+.shipinggif,.refundjpg{
+  height: 15vh;
+  width: 20vh;
+  margin-top: 3vh;
+  border-radius: 15px;
 }
+
+
+/* footer  */
+
+.footerleft,.footerright{
+  display: flex;
+  gap: 17vh;
+  justify-content: center;
+}
+.footerright{
+  display: flex;
+  gap: 10vh;
+  justify-content: center;
+}
+.firstftrdata,.ftrdatafollowus,.firstdatcontact{
+  width: 50vh;
+}
+.footerpartnerimg{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.footerpartnerimg1{
+  height: 10vh;
+  width: 15vh;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 #navlink{
@@ -377,87 +461,11 @@ align-items: center;
   font-weight: 500;
   height: 3em;
   justify-content: space-evenly;
-  /* border-top: none; */
 }
 a{
   text-decoration: none;
 }
 
-.imageheight{
-  width: 308px;
-  height: 184px;
-  border-radius: 15px;
-}
-.descriptionwidth{
-  width: 308px;
-}
-
-.parentside{
-  display: flex;
-  justify-content: center;
-  gap: 5vh;
-}
-.parentcontent{
-  margin: 5px;
-  display: flex;
-  gap: 10px;
-  border-bottom: 1px solid gray;
-}
-.parentcontent:hover{
-  background-color: #8d8686;
-  border-radius: 15px;
-}
-.headingcnt{
-  font-size: x-large;
-}
-.bm-menu-wrap, .bm-overlay,.bm-burger-button{
-  display: none;
-
-}
-.itemheading{
-  margin: 0;
-  /* color: aliceblue; */
-  padding: 0;
-  /* width: ; */
-  box-sizing: border-box;
-}
-
-
-/* dynamic component  */
-/* ______________________________________________________________ */
-#dynmbgc{
-  /* background-color: #fff; */
-  border-radius: 15px;
-  height: fit-content;
-}
-#dynmimgcenter{
-  display: flex;
-  justify-content: center;
-}
-#dynmimg{
-  height: 400px;
-  width: 400px;
-  border-radius: 15px;
-}
-#dynmdesc{
-  height: fit-content;
-  padding: 10px;
-}
-#dynmrevbtm{
-  color: #2f046f;
-  height: 50px;
-  width: 190px;
-  border: 2px solid red;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: x-large;
-  font-weight: 500;
-}
-#dynmbtm{
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-}
 
 /* ______________________________________________________ */
 
@@ -466,6 +474,7 @@ a{
 .footerbgc{
   background-color: #fff;
   border: 5px solid #077596;
+  margin-top: 5vh;
 }
 .fa-twitter {
   color: #1da1f2; /* Twitter color */
@@ -553,6 +562,23 @@ a{
 
 @media screen and (max-width:765px) and (min-width: 373px) {
 
+
+  /* top navbar */
+  .topnavbar{
+    flex-direction: column;
+    align-items: center;
+    height: min-content;
+  }
+  .logo {
+    height: 10vh;
+    width: 31vh;
+  }
+
+
+
+
+
+
     /* hamburger menu  */
   
     #navlink{
@@ -578,7 +604,7 @@ a{
     width: 36px;
     height: 30px;
     right: 20px;
-    top: 10px;
+    top: 85px;
     display: block;
   }
   

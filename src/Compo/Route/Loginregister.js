@@ -13,7 +13,7 @@ const Loginregister = () => {
                 <div id='logincmp'>
                     <div className='headingfontstyle'>WELCOME BACK</div>
                     <div className='fontstyle'>Login to enjoy your fashion journey</div>
-                    <div><img className='loginlogo' src={require('../Imageh/LOGINLOGO.png')} alt="logoimage" /></div>
+                    <div><img className='loginlogo' src={require('../Imageh/security.jpg')} alt="logoimage" /></div>
                     <button onClick={() => setCount(!count)} className='submit'>LOGIN</button>
                     <div>{count ? null : <Login />}</div>
                 </div>

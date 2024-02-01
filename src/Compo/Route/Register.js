@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import signup from '../Imageh/signup.jpg'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -12,7 +13,7 @@ const Register = () => {
 
     const handleRegister=()=>{
         try{
-            const response = axios.post('http://localhost:5555/pages/register',{name,email,password})
+            const response = axios.post('https://ecommercebackend-ptf5.onrender.com/pages/register',{name,email,password})
             .then((res)=>{
                 console.log(res.data,'register data')
                 if(res.data.msg === 'This email is already exist'){
@@ -31,7 +32,11 @@ const Register = () => {
     }
 
   return (
+    <>
     <div className='registerdetails registerdetails1'>
+    <div>
+    <img className='signupimg' src={signup} alt="my-gif" />
+    </div>
 
     <div>REGISTER DETAILS</div>
     <div>Name : <input className='inputfield' type='text' value={name} name='name' placeholder='Enter your name' onChange={(e)=>setName(e.target.value)} required/></div>
@@ -39,6 +44,9 @@ const Register = () => {
     <div>Password : <input className='inputfield' value={password} name='password' placeholder='Enter your password' onChange={(e)=>setPassword(e.target.value)} required/></div>
     <button className='submit' onClick={handleRegister}>REGISTER</button>
     </div>
+    
+    </>
+    
 
   )
 }

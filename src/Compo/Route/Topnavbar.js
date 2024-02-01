@@ -4,7 +4,6 @@ import { faCartShopping, faSearch, faUser } from '@fortawesome/free-solid-svg-ic
 import { useNavigate } from 'react-router-dom';
 
 const Topnavbar = () => {
-
     const Navigate = useNavigate()
 
 const handleLoginRegister=()=>{
@@ -15,7 +14,7 @@ const handleLoginRegister=()=>{
     <>
     <div className='topnavbar'>
     
-        <div onClick={()=>Navigate('/')}><img className='logo'  src={require('../Imageh/ISHOP.png')} alt="logoimage" /></div>
+        <div onClick={()=>Navigate('/')}><img className='logo'  src={require('../Imageh/ISHOPBUFFER.png')} alt="logoimage" /></div>
         <div className='topnavbarright'>
           <div className='topnavbarsearch'><input className='topnavbarsearch1' placeholder='Search Here.....' />
             <div id='searchbtm'><FontAwesomeIcon icon={faSearch} />

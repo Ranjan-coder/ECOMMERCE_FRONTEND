@@ -11,7 +11,7 @@ const Login = () => {
 
     const handleLogin=()=>{
         try{
-            const response = axios.post('http://localhost:5555/pages/login',{email,password})
+            const response = axios.post('https://ecommercebackend-ptf5.onrender.com/pages/login',{email,password})
             .then((res)=>{
                 console.log(res.data,'register data');
 

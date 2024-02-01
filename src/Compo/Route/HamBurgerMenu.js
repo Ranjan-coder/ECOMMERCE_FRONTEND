@@ -7,11 +7,11 @@ const HamburgerMenuCmp = () => {
   return (
     <Menu>
         <NavLink id="home" className="menu-item" to='/'>Home</NavLink>
-        <NavLink id="bollywood" className="menu-item" to='/bollywood'>Bollywood</NavLink>
-        <NavLink id="hollywood" className="menu-item" to='/hollywood'>Hollywood</NavLink>
-        <NavLink id="fitness" className="menu-item" to='/fitness'>Fitness</NavLink>
-        <NavLink id="technology" className="menu-item" to='/technology'>Technology</NavLink>
-        <NavLink id="food" className="menu-item" to='/food'>Food</NavLink>
+        <NavLink id="bollywood" className="menu-item" to='/phone'>Phone</NavLink>
+        <NavLink id="hollywood" className="menu-item" to='/laptop'>Laptop</NavLink>
+        <NavLink id="fitness" className="menu-item" to='/camera'>Camera</NavLink>
+        <NavLink id="technology" className="menu-item" to='/fashion'>Fashion</NavLink>
+        <NavLink id="food" className="menu-item" to='/appliance'>Appliance</NavLink>
 
         </Menu>
   );

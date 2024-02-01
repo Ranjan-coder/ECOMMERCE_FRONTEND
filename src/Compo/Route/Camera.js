@@ -14,29 +14,27 @@ const Camera = () => {
         <div className='leftchild'>
           <div className='toppost'>Camera</div>
           <div className='hrline'></div>
-          {data.filter((e) => e.category === 'camera').map((item, index) => {
+           <div id='homedata'>
+        {
+          data.filter((e) => e.category === 'camera').map((item, index) => {
             return (
               <>
+                <div id='homedatacontent'>
+                  <NavLink to={`/dynamic/${item.id}`}>
+                    <img className='imageheighthome' src={item.image} alt='not found' />
+                    <div className='itemname'>{item.name.slice(0, 20)}...</div>
+                    <div className='itemrating'>{item.rating}</div>
+                    <div className='itemprice'>{item.price}</div>
+                  </NavLink>
+                  {/* <p className='itemdesc descriptionwidth'>{item.description.slice(0, 150)}...</p> */}
 
-                <div className='parentcontent'>
-                  <div className='childc1'>
-
-                    <NavLink to={`/dynamic/${item.id}`}>
-                      <img className='imageheight' src={item.image} alt='not found' />
-                    </NavLink>
-                  </div>
-
-                  <div className='childc2'>
-                    <NavLink to={`/dynamic/${item.id}`}>
-                      <h2 className='itemheading'>{item.name}</h2>
-                    </NavLink>
-                    <p className='itemdesc'>{item.description.slice(0, 130)}...</p>
-                  </div>
                 </div>
-
               </>
             )
-          })}
+          })
+        }
+      </div>
+        
         </div>
         
       </div>

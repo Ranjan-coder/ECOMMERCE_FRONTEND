@@ -12,28 +12,27 @@ const Phone = () => {
         <div className='leftchild'>
           <div className='toppost'>Phone</div>
           <div className='hrline'></div>
+          <div id='homedata'>
+
           {data.filter((e) => e.category === 'iphone').map((item, index) => {
             return (
               <>
-                <div className='parentcontent'>
-                  <div className='childc1'>
+                <div id='homedatacontent'>
+                  <NavLink to={`/dynamic/${item.id}`}>
+                    <img className='imageheighthome' src={item.image} alt='not found' />
+                    <div className='itemname'>{item.name.slice(0, 20)}...</div>
+                    <div className='itemrating'>{item.rating}</div>
+                    <div className='itemprice'>{item.price}</div>
+                  </NavLink>
+                  {/* <p className='itemdesc descriptionwidth'>{item.description.slice(0, 150)}...</p> */}
 
-                    <NavLink to={`/dynamic/${item.id}`}>
-                      <img className='imageheight' src={item.image} alt='not found' />
-                    </NavLink>
-                  </div>
-
-                  <div className='childc2'>
-                    <NavLink to={`/dynamic/${item.id}`}>
-                      <h2 className='itemheading'>{item.heading}</h2>
-                    </NavLink>
-                    <p className='itemdesc'>{item.description.slice(0, 125)}...</p>
-                  </div>
                 </div>
+                
 
               </>
             )
           })}
+          </div>
         </div>
       </div>
     </>
