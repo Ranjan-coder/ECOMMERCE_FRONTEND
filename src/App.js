@@ -3,7 +3,6 @@ import './App.css';
 import FooterCmp from './Compo/Route/FooterCmp';
 import RouteCompo from './Compo/Route/RouteCompo';
 import '@fortawesome/fontawesome-free/css/all.css';
-// import './style.css'
 import GradientBufferBar from './Compo/Route/BufferGradient';
 import Topnavbar from './Compo/Route/Topnavbar';
 

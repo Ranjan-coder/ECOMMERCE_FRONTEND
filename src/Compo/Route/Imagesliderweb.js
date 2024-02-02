@@ -3,8 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import sprite from "./sprite.svg";
 
 const images = [
-  "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/571011e572c5967d.jpg?q=20",
-  "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/36edcda6bdf9ca8a.jpg?q=20",
+  "https://rukminim1.flixcart.com/flap/3376/560/image/ae9966569097a8b7.jpg?q=50",
+  "https://rukminim1.flixcart.com/flap/3376/560/image/f6202f13b6f89b03.jpg?q=50",
   "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/18e18469fdc3e871.jpg?q=20",
   "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/f91a7f06c29042a0.jpg?q=20",
   

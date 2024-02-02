@@ -13,7 +13,7 @@ const Register = () => {
 
     const handleRegister=()=>{
         try{
-            const response = axios.post('https://ecommercebackend-ptf5.onrender.com/pages/register',{name,email,password})
+            const response = axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/register',{name,email,password})
             .then((res)=>{
                 console.log(res.data,'register data')
                 if(res.data.msg === 'This email is already exist'){

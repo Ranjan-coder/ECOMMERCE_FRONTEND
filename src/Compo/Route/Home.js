@@ -6,8 +6,6 @@ import shiping from '../Imageh/shiping.gif'
 import refund from '../Imageh/refund.jpg'
 import service from '../Imageh/service.jpg'
 import Appslider from './Imagesliderweb'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCircleDollarToSlot, faHeadset, faTruckFast } from '@fortawesome/free-solid-svg-icons'
 
 
 const Home = () => {
@@ -35,6 +33,7 @@ const Home = () => {
                     <div className='itemname'>{item.name.slice(0, 20)}...</div>
                     <div className='itemrating'>{item.rating}</div>
                     <div className='itemprice'>{item.price}</div>
+                    <button className='homecartbtm'>Add To Cart</button>
                   </NavLink>
                   {/* <p className='itemdesc descriptionwidth'>{item.description.slice(0, 150)}...</p> */}
 
