@@ -14,7 +14,7 @@ const handleLoginRegister=()=>{
     <>
     <div className='topnavbar'>
     
-        <div onClick={()=>Navigate('/')}><img className='logo' src={require('../Imageh/ISHOPBUFFER.png')} alt="logoimage" /></div>
+        <div onClick={()=>Navigate('/')} className='logocorrection'><img className='logo' src={require('../Imageh/ISHOPBUFFER.png')} alt="logoimage" /></div>
         <div className='topnavbarright'>
           <div className='topnavbarsearch'><input className='topnavbarsearch1' placeholder='Search Here.....' />
             <div id='searchbtm'><FontAwesomeIcon id='searchbtm' icon={faSearch} />

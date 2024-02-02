@@ -12,9 +12,11 @@ body{
   background-color: #eaf8fc;
   /* background-color: #dbf0f7; */
 }
-.box {
+.logocorrection {
   /* max-width: 500px; */
-  margin: auto;
+  /* margin: auto; */
+  display: flex;
+  align-items: center;
 }
 
 .nav_btn {
@@ -109,6 +111,7 @@ body{
   width: 100vh;
   align-items: center;
   gap: 5vh;
+
 }
 .navbaricon{
   display: flex;
@@ -594,6 +597,7 @@ a{
     align-items: center;
     height: 29vh;
     justify-content: center;
+    gap: 5px;
   }
   .logo {
     height: 10vh;
@@ -764,6 +768,9 @@ a{
   .logo {
     height: 8vh;
   }
+  .logocorrection{
+    display: block;
+  }
   .itemrating {
     height: 2vh;
   }
@@ -792,15 +799,45 @@ a{
     width: 100%;
     height: 100%;
 }
+.footerbgc {
+  display: flex;
+  flex-direction: column;
+}
 .homeiconftr {
   flex-direction: column;
   gap: 1vh;
   width: 100%;
 }
+.dynmparent {
+  display: flex;
+  gap: 5vh;
+  margin: 9px;
+  flex-direction: column;
+}
+#dynmimg {
+  height: 45vh;
+  width: 73vh;
+}
+.dynmparentcart {
+  width: 75vh;
+  gap: 1vh;
+}
+
 .footerleft {
   display: flex;
   gap: 1vh;
   justify-content: center;
+}
+.signupimg{
+  width: 27vh;
+}
+.loginlogo {
+  width: 31vh;
+  height: 35vh;
+  border-radius: 15px;
+}
+.loginparent {
+  gap: 3vh;
 }
 
 } 
