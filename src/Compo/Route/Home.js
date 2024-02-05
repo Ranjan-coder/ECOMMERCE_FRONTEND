@@ -8,10 +8,15 @@ import service from '../Imageh/service.jpg'
 import Appslider from './Imagesliderweb'
 
 
-const Home = () => {
+const Home = ({ addToCart }) => {
 
   const [data] = useContext(Store)
   console.log(data);
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    console.log(addToCart);
+  };
 
   return (
     <>
@@ -30,11 +35,11 @@ const Home = () => {
                 <div id='homedatacontent'>
                   <NavLink to={`/dynamic/${item.id}`}>
                     <img className='imageheighthome' src={item.image} alt='not found' />
-                    <div className='itemname'>{item.name.slice(0, 20)}...</div>
+                    <div className='itemname'>{item.name.slice(0, 15)}...</div>
                     <div className='itemrating'>{item.rating}</div>
                     <div className='itemprice'>{item.price}</div>
-                    <button className='homecartbtm'>Add To Cart</button>
                   </NavLink>
+                    <button className='homecartbtm' onClick={() => handleAddToCart(item)}>Add To Cart</button>
                   {/* <p className='itemdesc descriptionwidth'>{item.description.slice(0, 150)}...</p> */}
 
                 </div>

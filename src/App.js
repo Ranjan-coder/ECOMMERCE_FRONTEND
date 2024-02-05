@@ -5,6 +5,7 @@ import RouteCompo from './Compo/Route/RouteCompo';
 import '@fortawesome/fontawesome-free/css/all.css';
 import GradientBufferBar from './Compo/Route/BufferGradient';
 import Topnavbar from './Compo/Route/Topnavbar';
+import HamburgerMenuCmp from './Compo/Route/HamBurgerMenu';
 
 
 
@@ -28,6 +29,8 @@ function App() {
   return (
     <div className="App">
       <GradientBufferBar isLoading={isLoading} />
+      <HamburgerMenuCmp/>
+
       <Topnavbar/>
       <RouteCompo />
       <FooterCmp />

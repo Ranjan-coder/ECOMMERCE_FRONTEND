@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Home from './Home'
 import { NavLink, Route, Routes } from 'react-router-dom';
 import DataCompo from '../Store/Store'
 import DynamicCompo from './DynamicCompo'
-import HamburgerMenuCmp from './HamBurgerMenu'
+// import HamburgerMenuCmp from './HamBurgerMenu'
 import Loginregister from './Loginregister'
 import Phone from './Phone'
 import Laptop from './Laptop'
 import Camera from './Camera'
 import Fashion from './Fashion'
 import Appliance from './Appliance'
-import Cart from './Cart';
 import Topnavbar from './Topnavbar';
+import Cart from './Cart';
 
 const RouteCompo = () => {
+
+    const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  };
 
   return (
     <>
@@ -26,22 +32,22 @@ const RouteCompo = () => {
         <NavLink to='/fashion'><div className='navimgroute'><img className='imgroute' src='https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100' alt='navimg'/>Fashion</div></NavLink>
         <NavLink to='/appliance'><div className='navimgroute'><img className='imgroute' src='https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100' alt='navimg'/>Appliance</div></NavLink>
         </div>
-        <HamburgerMenuCmp/>
+        {/* <HamburgerMenuCmp/> */}
 
     
 
         <DataCompo>
             <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/phone' element={<Phone/>}/>
-                <Route path='/laptop' element={<Laptop/>}/>
-                <Route path='/camera' element={<Camera/>}/>
-                <Route path='/fashion' element={<Fashion/>}/>
-                <Route path='/appliance' element={<Appliance/>}/>
-                <Route path='/dynamic/:id' element={<DynamicCompo/>}/>
+                <Route path='/' element={<Home addToCart={addToCart}/>}/>
+                <Route path='/phone' element={<Phone addToCart={addToCart}/>}/>
+                <Route path='/laptop' element={<Laptop addToCart={addToCart}/>}/>
+                <Route path='/camera' element={<Camera addToCart={addToCart}/>}/>
+                <Route path='/fashion' element={<Fashion addToCart={addToCart}/>}/>
+                <Route path='/appliance' element={<Appliance addToCart={addToCart}/>}/>
+                <Route path='/dynamic/:id' element={<DynamicCompo addToCart={addToCart}/>}/>
                 <Route path='/login' element={<Loginregister/>}/>
-                <Route path='/cart/:id' element={<Cart/>}/>
                 <Route path='/' element={<Topnavbar/>}/>
+                <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems } />} />
             </Routes>
         </DataCompo>
     </>

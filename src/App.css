@@ -215,6 +215,7 @@ body{
 button:hover{
   background-image: linear-gradient(145deg, rgb(172, 234, 243), rgb(237, 156, 229), rgb(224, 240, 137));
   scale: 0.9;
+  cursor: pointer;
 
 }
 #registercmp:hover{
@@ -349,13 +350,16 @@ align-items: center;
   width: 35vh;
   /* width: 50vh; */
   display: inline-flex;
+  height: 45vh;
+  padding: 5vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   background-color: aliceblue;
   border-radius: 9px;
-  box-shadow: 1px 1px 5px #c5f5c5;
+  /* box-shadow: 1px 1px 5px #c5f5c5; */
+  box-shadow: 1px 1px 5px #b7aff4;
   /* background-image: url('./Compo/Imageh/backgrounditemsky.jpg'); */
 }
 .homecartbtm{
@@ -372,6 +376,7 @@ align-items: center;
       inset 0 -3em 3em rgb(0 200 0 / 30%),
       0 0 0 2px white,
       0.0em 0.0em 1em rgb(200 0 0 / 60%);
+      transition: all 1.5;
 }
 .imageheighthome{
   width: 20vh;
@@ -469,9 +474,113 @@ align-items: center;
   width: 5vh;
 }
 
+/* CART  */
+.cartparent{
+  display: flex;
+  justify-content: space-around;
+}
+.cartright{
+  /* position: fixed;
+  right: 53vh;
+  top: 40vh; */
+  background-color: #fff;
+  width: 50vh;
+  height: 28vh;
+  box-shadow: 1px 1px 5px #b7aff4;
 
+}
+.cartleft{
+  background-color: #fff;
+  width: 100vh;
+  /* min-height: 13vh; */
+  box-shadow: 1px 1px 5px #b7aff4;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cartheading{
+  display: flex;
+  text-align: center;
+  height: 7vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 2px solid #9ec3f3;
+  border-radius: 5px;
+  color: #398dfb;
+  box-shadow: 3px 5px 5px #b7aff4;
+}
+.cartcontent{
+  display: flex;
+  gap: 10vh;
+  /* align-items: center; */
+  justify-content: center;
+}
+.cartimage{
+  height: 25vh;
+  width: 25vh;
+}
+.cartname,.cartprice{
+  font-weight: 500;
+  padding: 5px;
+}
+.cartrating{
+  color: grey;
 
+}
+.cartquantitybuttom{
+  width: 30vh;
+  height: 5vh;
+  display: flex;
+  margin-top: 2vh;
+  gap: 3vh;
+}
+.quantitybuttom{
+  width: 10vh;
+  background-color: #6370f9;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+.cartprice1{
+  /* list-style: ; */
+  text-decoration: line-through;
+  color: grey;
+}
+.placeorder{
+  /* background-color: white; */
+  background-color: rgb(149, 244, 170);
+  width: 100vh;
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  box-shadow: 3px 5px 5px #b7aff4;
+}
+.placeorder1{
+  height: 9vh;
+  width: 29vh;
+  background-color: #f45f0f;
+  border-radius: 10px;
+  border: none;
+  color: white;
+}
+.pricedetsils{
+  height: 5vh;
+  box-shadow: 1px 5px 5px #b7aff4;
+  text-align: center;
 
+}
+.pricesummary{
+  padding: 1vh;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.pricetotal{
+  text-align: center;
+}
 
 
 
@@ -483,7 +592,8 @@ align-items: center;
   background-color: #f8f9f9;
   border-bottom: 2px solid #a4a4f4;
   border-radius: 5px;
-  box-shadow: 3px 3px 5px #787575;
+  /* box-shadow: 3px 3px 5px #787575; */
+  box-shadow: 3px 5px 5px #b7aff4;
   display: flex;
   font-size: small;
   font-weight: 500;
@@ -736,7 +846,21 @@ a{
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }
-  
+  .loginparent{
+    flex-direction: column;
+  }
+  #logincmp{
+    width: 100%;
+  }
+  #registercmp{
+    width: 100%;
+  }
+  .signupimg {
+    width: 52vh;
+  }
+  .loginlogo{
+    width: 52vh;
+  }
   .bm-item {
     display: inline-block;
     margin-bottom: 10px;
@@ -753,6 +877,22 @@ a{
   
   .bm-item.active {
     color: #a90000;
+  }
+  .cartparent{
+    flex-direction: column;
+    gap: 2vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartleft,.placeorder{
+    width: 55vh;
+  }
+  .cartcontent{
+    gap: 1vh;
+
+  }
+  .cartquantitybuttom {
+    width: 28vh;
   }
 }
 
@@ -838,6 +978,22 @@ a{
 }
 .loginparent {
   gap: 3vh;
+}
+.cartcontent {
+  gap: 1vh;
+}
+.cartparent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+}
+.cartleft {
+  width: 73vh;
+}
+.placeorder{
+  width: 73vh;
 }
 
 } 
