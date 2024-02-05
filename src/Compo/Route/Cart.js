@@ -1,64 +1,38 @@
-// Cart.js
-import React, { useState } from 'react';
-
-// const Cart = () => {
-//   const [cartItems, setCartItems] = useState([]);
-
-//   return (
-//     <div>
-//       <h2>Cart</h2>
-//       <div id='homedata'>
-//         {
-//           cartItems.map((item, index) => {
-//             return (
-//               <>
-//                 <div id='homedatacontent'>
-//                     <img className='imageheighthome' src={item.image} alt='not found' />
-//                     <div className='itemname'>{item.name.slice(0, 20)}...</div>
-//                     <div className='itemrating'>{item.rating}</div>
-//                     <div className='itemprice'>{item.price}</div>
-                 
-//                 </div>
-//               </>
-//             )
-//           })
-//         }
-//       </div>
-//     </div>
-//   );
-// };
-
-// const Cart = ({ cartItems }) => {
-//   return (
-//     <div>
-//       <h2>Cart</h2>
-//       <div id='homedata'>
-//         {
-//           cartItems.map((item, index) => {
-//             return (
-//               <div key={index} id='homedatacontent'>
-//                 <img className='imageheighthome' src={item.image} alt='not found' />
-//                 <div className='itemname'>{item.name.slice(0, 20)}...</div>
-//                 <div className='itemrating'>{item.rating}</div>
-//                 <div className='itemprice'>{item.price}</div>
-//               </div>
-//             )
-//           })
-//         }
-//       </div>
-//     </div>
-//   );
-// };
-
-
-// export default Cart;
-
-
-
-
-// import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 const Cart = ({ cartItems, setCartItems  }) => {
+
+  const navigate = useNavigate()
+  const [message,setMessage] = useState('')
+  console.log(message);
+
+  useEffect(()=>{
+      const token = localStorage.getItem('jwtToken')
+      console.log('token : ',token);
+      if(!token){
+          navigate('/login')
+      }
+      else{
+          axios.get('https://ecommercebackend-ptf5.onrender.com/pages/log/cart',
+          // when we use jwt token we have to use these keyword 
+          // header and authorization are predefined keyword 
+          {headers:{
+              authorization:`Bearer ${token}`,
+          },
+
+          })
+          .then(res=>{
+              const responseData = res.data
+              alert(responseData.msg)
+              setMessage(responseData.msg)
+          })
+      }
+  },[navigate])
+
+
+
   // const [cartItems, setCartItems] = useState([]);
   // Function to calculate the total price of all items in the cart
   const getTotalPrice = () => {
