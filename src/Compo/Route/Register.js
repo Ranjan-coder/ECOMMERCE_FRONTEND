@@ -66,9 +66,9 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleRegister = async () => { //https://ecommercebackend-ptf5.onrender.com
+    const handleRegister = async () => { 
         try {
-            const response = await axios.post('http://localhost:5555/pages/log/register', {
+            const response = await axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/register', {
                 name: name,
                 email: email,
                 password: password
