@@ -10,7 +10,10 @@ const Login = () => {
 
     const handleLogin= async ()=>{
         try{
-            const response = await axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/login',{email,password})
+            const response = await axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/login',{
+                email:email,
+                password:password
+            })
             // console.log(response);
             .then((res)=>{
                 console.log(res,'register data');
@@ -35,7 +38,7 @@ const Login = () => {
     <div className='logindetails'>
     <div>LOGIN DETAILS</div>
     <div>Email : <input className='inputfield' type='email' value={email} name='email' placeholder='Enter your email' required onChange={(e)=>setEmail(e.target.value)}/></div>
-    <div>Password : <input className='inputfield' name='password' value={password} placeholder='Enter your password' required onChange={(e)=>setPassword(e.target.value)}/></div>
+    <div>Password : <input type='password' className='inputfield' name='password' value={password} placeholder='Enter your password' required onChange={(e)=>setPassword(e.target.value)}/></div>
     <button className='submit' onClick={handleLogin}>SUBMIT</button>
     </div>
   )

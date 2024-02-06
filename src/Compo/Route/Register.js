@@ -91,7 +91,6 @@ const Register = () => {
                 <div>
                     <img className='signupimg' src={signup} alt="my-gif" />
                 </div>
-
                 <div>REGISTER DETAILS</div>
                 <div>Name : <input className='inputfield' type='text' value={name} name='name' placeholder='Enter your name' onChange={(e) => setName(e.target.value)} required /></div>
                 <div>Email : <input className='inputfield' type='email' value={email} name='email' placeholder='Enter your email' onChange={(e) => setEmail(e.target.value)} required /></div>

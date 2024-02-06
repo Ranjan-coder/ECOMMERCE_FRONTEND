@@ -36,7 +36,7 @@ const RouteCompo = () => {
 
     
 
-        <DataCompo>
+        {/* <DataCompo> */}
             <Routes>
                 <Route path='/' element={<Home addToCart={addToCart}/>}/>
                 <Route path='/phone' element={<Phone addToCart={addToCart}/>}/>
@@ -49,7 +49,7 @@ const RouteCompo = () => {
                 <Route path='/' element={<Topnavbar/>}/>
                 <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems } />} />
             </Routes>
-        </DataCompo>
+        {/* </DataCompo> */}
     </>
 
     )
