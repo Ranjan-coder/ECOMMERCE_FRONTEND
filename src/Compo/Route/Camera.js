@@ -1,11 +1,25 @@
-import React, { useContext } from 'react'
-import { Store } from '../Store/Store'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import axios from 'axios'
 
 const Camera = ({ addToCart }) => {
 
-    const [data] = useContext(Store)
-    console.log(data);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://ecommercebackend-ptf5.onrender.com/pages/log/data');
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures this effect runs only once
+
+
 
     const handleAddToCart = (item) => {
       addToCart(item);
@@ -17,13 +31,9 @@ const Camera = ({ addToCart }) => {
 
 <div className='parentside'>
         <div className='leftchild'>
-          <div className='toppost'>Camera</div>
-          <div className='hrline'></div>
            <div id='homedata'>
         {
-          data.filter((e) => e.category === 'camera').map((item, index) => {
-            return (
-              <>
+          products.filter((e) => e.category === 'camera').map((item, index) => (
                 <div id='homedatacontent'>
                   <NavLink to={`/dynamic/${item.id}`}>
                     <img className='imageheighthome' src={item.image} alt='not found' />
@@ -33,11 +43,9 @@ const Camera = ({ addToCart }) => {
                   </NavLink>
                   <button className='homecartbtm' onClick={() => handleAddToCart(item)}>Add To Cart</button>
                   {/* <p className='itemdesc descriptionwidth'>{item.description.slice(0, 150)}...</p> */}
-
                 </div>
-              </>
             )
-          })
+          )
         }
       </div>
         

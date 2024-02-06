@@ -1,10 +1,24 @@
-import React, { useContext } from 'react'
-import { Store } from '../Store/Store'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import axios from 'axios'
 
 const Appliance = ({ addToCart }) => {
 
-    const [data] = useContext(Store)
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://ecommercebackend-ptf5.onrender.com/pages/log/data');
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures this effect runs only once
+
 
     const handleAddToCart = (item) => {
       addToCart(item);
@@ -17,9 +31,7 @@ const Appliance = ({ addToCart }) => {
         <div className='leftchild'>
           <div id='homedata'>
         {
-          data.filter((e) => e.category === 'appliance').map((item, index) => {
-            return (
-              <>
+          products.filter((e) => e.category === 'appliance').map((item, index) => (
                 <div id='homedatacontent'>
                   <NavLink to={`/dynamic/${item.id}`}>
                     <img className='imageheighthome' src={item.image} alt='not found' />
@@ -31,9 +43,9 @@ const Appliance = ({ addToCart }) => {
                   {/* <p className='itemdesc descriptionwidth'>{item.description.slice(0, 150)}...</p> */}
 
                 </div>
-              </>
+
             )
-          })
+          )
         }
       </div>
         </div>

@@ -9,9 +9,9 @@ const Cart = ({ cartItems, setCartItems  }) => {
   console.log(message);
 
   useEffect(()=>{
-      const token = localStorage.getItem('jwtToken')
-      console.log('token : ',token);
-      if(!token){
+      const jwtToken = localStorage.getItem('jwtToken')
+      console.log('token : ',jwtToken);
+      if(!jwtToken){
           navigate('/login')
       }
       else{
@@ -19,7 +19,7 @@ const Cart = ({ cartItems, setCartItems  }) => {
           // when we use jwt token we have to use these keyword 
           // header and authorization are predefined keyword 
           {headers:{
-              authorization:`Bearer ${token}`,
+              authorization:`Bearer ${jwtToken}`,
           },
 
           })
