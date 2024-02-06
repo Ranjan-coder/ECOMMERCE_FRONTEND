@@ -66,9 +66,9 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleRegister = async () => {
+    const handleRegister = async () => { //https://ecommercebackend-ptf5.onrender.com
         try {
-            const response = await axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/register', {
+            const response = await axios.post('http://localhost:5555/pages/log/register', {
                 name: name,
                 email: email,
                 password: password
@@ -81,7 +81,7 @@ const Register = () => {
                 localStorage.setItem('jwtToken : ', response.data.jwtToken);
             }
         } catch (error) {
-            console.error('registration failed : ', error);
+            console.log('registration failed : ', error);
         }
     };
 
