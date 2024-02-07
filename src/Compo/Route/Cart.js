@@ -9,7 +9,7 @@ const Cart = ({ cartItems, setCartItems  }) => {
   console.log(message);
 
   useEffect(()=>{
-      const jwtToken = localStorage.getItem('jwtToken')
+      const jwtToken = localStorage.getItem('jwtToken :')
       console.log('token : ',jwtToken);
       if(!jwtToken){
           navigate('/login')
