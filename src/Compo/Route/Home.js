@@ -107,8 +107,19 @@ import refund from '../Imageh/refund.jpg';
 import service from '../Imageh/service.jpg';
 import Appslider from './Imagesliderweb';
 import axios from 'axios';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
 
 const Home = ({ addToCart }) => {
+
+//   const notify = () => {
+//     // Calling toast method by passing string
+//     toast("Item Added", {
+//       // position: toast.POSITION.TOP_RIGHT,
+//   });
+// };
+  // const notify = () => toast("Item added sucessfully");
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -123,6 +134,7 @@ const Home = ({ addToCart }) => {
 
     fetchData();
   }, []); // Empty dependency array ensures this effect runs only once
+
 
   const handleAddToCart = (item) => {
     addToCart(item);
@@ -147,6 +159,8 @@ const Home = ({ addToCart }) => {
               <div className='itemprice'>{item.price}</div>
             </NavLink>
             <button className='homecartbtm' onClick={() => handleAddToCart(item)}>Add To Cart</button>
+            {/* <button onClick={notify}>Click Me!</button> */}
+            {/* <ToastContainer /> */}
           </div>
         ))}
       </div>

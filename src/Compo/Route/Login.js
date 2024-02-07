@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 
@@ -8,9 +10,16 @@ const Login = () => {
     const [password,setPassword] = useState('')
     const navigate = useNavigate()
 
+    const showToastMessage = (message) => {
+        toast.success(message, {
+        //   position: toast.POSITION.TOP_RIGHT,
+        });
+      };
+
     const handleLogin= async ()=>{
         try{
-            const response = await axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/login',{
+            // const response = 
+            await axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/login',{
                 email:email,
                 password:password
             })
@@ -23,14 +32,17 @@ const Login = () => {
                     navigate('/register')
                 }
                 else{
-                    localStorage.setItem('jwtToken :',res.data.token)
+                    localStorage.setItem('jwtToken :',res.data.jwtToken)
                     console.log(res.data.msg);
+                    showToastMessage('Login Successful')
+                    navigate('/')
                 }
             })
             // console.log(response.data,'response data');
         }
         catch(error){
-            console.log('login failed : ',error);
+            console.log('login failed :',error);
+            showToastMessage('Login Failed')
         }
     }
 
@@ -40,6 +52,7 @@ const Login = () => {
     <div>Email : <input className='inputfield' type='email' value={email} name='email' placeholder='Enter your email' required onChange={(e)=>setEmail(e.target.value)}/></div>
     <div>Password : <input type='password' className='inputfield' name='password' value={password} placeholder='Enter your password' required onChange={(e)=>setPassword(e.target.value)}/></div>
     <button className='submit' onClick={handleLogin}>SUBMIT</button>
+    <ToastContainer />
     </div>
   )
 }

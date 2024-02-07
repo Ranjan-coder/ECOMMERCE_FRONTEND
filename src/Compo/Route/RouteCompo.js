@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Home from './Home'
 import { NavLink, Route, Routes } from 'react-router-dom';
-import DataCompo from '../Store/Store'
+// import DataCompo from '../Store/Store'
 import DynamicCompo from './DynamicCompo'
 // import HamburgerMenuCmp from './HamBurgerMenu'
 import Loginregister from './Loginregister'
