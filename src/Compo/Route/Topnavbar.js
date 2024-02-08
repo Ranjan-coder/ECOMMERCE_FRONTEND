@@ -48,11 +48,11 @@ const Topnavbar = () => {
     const navigate = useNavigate();
 
     // logout button 
-    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('jwtToken :'));
+    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('jwtToken'));
 
     const handleLogout = () => {
         // Remove JWT token from localStorage
-        localStorage.removeItem('jwtToken :');
+        localStorage.removeItem('jwtToken');
         // Update state to reflect logout
         setIsLoggedIn(false);
         navigate('/login')

@@ -32,7 +32,7 @@ const Login = () => {
                     navigate('/register')
                 }
                 else{
-                    localStorage.setItem('jwtToken :',res.data.jwtToken)
+                    localStorage.setItem('jwtToken',res.data.jwtToken)
                     console.log(res.data.msg);
                     showToastMessage('Login Successful')
                     navigate('/')

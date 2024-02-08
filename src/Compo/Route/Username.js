@@ -5,7 +5,7 @@ function UserDetails() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('jwtToken : ');
+    const token = localStorage.getItem('jwtToken');
     console.log(token);
     if (token) {
       const decoded = jwtDecode(token);
