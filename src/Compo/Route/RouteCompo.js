@@ -17,13 +17,45 @@ import OrderPlaced from './OrderPlaced';
 const RouteCompo = () => {
 
     const [cartItems, setCartItems] = useState([]);
+    const [quantities, setQuantities] = useState({});
+    console.log(quantities);
+
+
+
+  // const addToCart = (item) => {
+  //   setCartItems((prevCartItems) => {
+  //     const isItemInCart = prevCartItems.some((cartItem) => cartItem.id === item.id);
+  //     return isItemInCart ? prevCartItems : [...prevCartItems, item];
+  //   });
+  // };
+
 
   const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
+    setCartItems((prevCartItems) => {
+      const existingItemIndex = prevCartItems.findIndex((cartItem) => cartItem.id === item.id);
+      if (existingItemIndex !== -1) {
+        // Item already exists in cart, update its quantity
+        const updatedCartItems = [...prevCartItems];
+        updatedCartItems[existingItemIndex] = {
+          ...updatedCartItems[existingItemIndex],
+          quantity: updatedCartItems[existingItemIndex].quantity + 1
+        };
+        setQuantities((prevQuantities) => ({
+          ...prevQuantities,
+          [item.id]: (prevQuantities[item.id] || 1) + 1
+        }));
+        return updatedCartItems;
+      } else {
+        // Item does not exist in cart, add it
+        setQuantities((prevQuantities) => ({
+          ...prevQuantities,
+          [item.id]: 1
+        }));
+        return [...prevCartItems, { ...item, quantity: 1 }];
+      }
+    });
   };
-
-
-
+  
 
   return (
     <>

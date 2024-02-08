@@ -40,22 +40,6 @@ const Home = ({ addToCart }) => {
   };
 
 
-
-  // const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cart')) || []);
-
-  // const handleAddToCart = () => {
-  //   const existingItemIndex = cartItems.findIndex((item) => item.id === products.id);
-  //   if (existingItemIndex !== -1) {
-  //     cartItems[existingItemIndex].quantity++;
-  //   } else {
-  //     cartItems.push({ id: products.id, quantity: 1 });
-  //   }
-  //   localStorage.setItem('cart', JSON.stringify(cartItems));
-  //   // Update cart icon/count display here
-
-
-  // }
-
   return (
     <>
       <Appslider />

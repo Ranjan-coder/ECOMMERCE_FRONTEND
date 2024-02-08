@@ -63,7 +63,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    const [name, setName] = useState('');
+    const [firstname, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -77,7 +77,7 @@ const Register = () => {
     const handleRegister = async () => { 
         try {
             const response = await axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/register', {
-                name: name,
+                firstname: firstname,
                 email: email,
                 password: password
             });
@@ -103,7 +103,7 @@ const Register = () => {
                     <img className='signupimg' src={signup} alt="my-gif" />
                 </div>
                 <div>REGISTER DETAILS</div>
-                <div>Name : <input className='inputfield' type='text' value={name} name='name' placeholder='Enter your name' onChange={(e) => setName(e.target.value)} required /></div>
+                <div>Name : <input className='inputfield' type='text' value={firstname} name='name' placeholder='Enter your name' onChange={(e) => setName(e.target.value)} required /></div>
                 <div>Email : <input className='inputfield' type='email' value={email} name='email' placeholder='Enter your email' onChange={(e) => setEmail(e.target.value)} required /></div>
                 <div>Password : <input type='password' className='inputfield' value={password} name='password' placeholder='Enter your password' onChange={(e) => setPassword(e.target.value)} required /></div>
                 <button className='submit' onClick={handleRegister}>REGISTER</button>

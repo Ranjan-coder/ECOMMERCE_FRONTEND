@@ -1,32 +1,54 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// import jwt_decode from 'jwt-decode'; // Using jwt-decode for decoding JWT tokens
+import jwt_Decode from "jwt-decode";
 
-const MyComponent = () => {
-  const [userName, setUserName] = useState(null);
+
+
+const UserProfile = () => {
+  const [userName, setUserName] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchUserName = async () => {
+    const fetchUserData = async () => {
       try {
-        const response = await axios.get('https://ecommercebackend-ptf5.onrender.com/pages/log/username');
-        setUserName(response.data.name);
+        const jwtToken = localStorage.getItem('jwtToken');
+        if (!jwtToken) {
+          throw new Error('JWT token not found');
+        }
+
+        // Decode JWT token to get user's email
+        const { email } = jwt_Decode(jwtToken); // Destructure the 'email' property from the decoded token
+        if (!email) {
+          throw new Error('Email not found in JWT token');
+        }
+        // Make request to backend to fetch user's name
+        const response = await axios.get(`https://ecommercebackend-ptf5.onrender.com/pages/log/username?email=${email}`);
+        const { name } = response.data;
+        console.log(response.data);
+        setUserName(name);
+        setLoading(false);
       } catch (error) {
-        console.error(error);
-        // Handle error
+        console.log('Error fetching user data:', error);
+        setLoading(false);
       }
     };
 
-    fetchUserName();
+    fetchUserData();
   }, []);
 
   return (
     <div>
-      {userName ? (
-        <p>Welcome, {userName}</p>
-      ) : (
+      {loading ? (
         <p>Loading...</p>
+      ) : (
+        <div>
+          <h2>User Profile</h2>
+          <p>Welcome, {userName}!</p>
+        </div>
       )}
     </div>
   );
 };
 
-export default MyComponent;
+export default UserProfile;
