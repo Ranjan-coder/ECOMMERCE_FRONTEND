@@ -12,6 +12,7 @@ import Fashion from './Fashion'
 import Appliance from './Appliance'
 import Topnavbar from './Topnavbar';
 import Cart from './Cart';
+import OrderPlaced from './OrderPlaced';
 
 const RouteCompo = () => {
 
@@ -20,6 +21,9 @@ const RouteCompo = () => {
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
+
+
+
 
   return (
     <>
@@ -48,6 +52,7 @@ const RouteCompo = () => {
                 <Route path='/login' element={<Loginregister/>}/>
                 <Route path='/' element={<Topnavbar/>}/>
                 <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems } />} />
+                <Route path="/orderplaced" element={<OrderPlaced />} />
             </Routes>
         {/* </DataCompo> */}
     </>

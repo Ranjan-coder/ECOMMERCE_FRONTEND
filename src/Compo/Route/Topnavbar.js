@@ -40,10 +40,26 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faCircleUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const Topnavbar = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
+
+    // logout button 
+    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('jwtToken :'));
+
+    const handleLogout = () => {
+        // Remove JWT token from localStorage
+        localStorage.removeItem('jwtToken :');
+        // Update state to reflect logout
+        setIsLoggedIn(false);
+        navigate('/login')
+        // toast.success('Login/Register')
+    };
+
+
 
     const handleLoginRegister = () => {
         navigate('/login');
@@ -85,6 +101,8 @@ const Topnavbar = () => {
                         <div className='icon3' onClick={() => navigate('/cart')}>
                             <FontAwesomeIcon className='icon3' icon={faCartShopping} />
                         </div>
+                        <div>{isLoggedIn && (<button className='logout' onClick={handleLogout}>LOGOUT</button>)}</div>
+                        {/* <ToastContainer /> */}
                     </div>
                 </div>
             </div>

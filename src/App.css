@@ -18,6 +18,13 @@ body{
   display: flex;
   align-items: center;
 }
+.logout{
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  /* background-color: rgb(149, 244, 170); */
+}
 
 .nav_btn {
   position: absolute;
@@ -216,6 +223,7 @@ button:hover{
   background-image: linear-gradient(145deg, rgb(172, 234, 243), rgb(237, 156, 229), rgb(224, 240, 137));
   scale: 0.9;
   cursor: pointer;
+  border: none;
 
 }
 #registercmp:hover{
@@ -432,6 +440,11 @@ align-items: center;
   height: 15vh;
   width: 20vh;
   margin-top: 3vh;
+  border-radius: 15px;
+}
+.orderplaced{
+  height: 50vh;
+  width: 150vh;
   border-radius: 15px;
 }
 

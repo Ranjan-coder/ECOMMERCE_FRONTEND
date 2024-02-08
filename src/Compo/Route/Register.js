@@ -88,6 +88,7 @@ const Register = () => {
             } else {
                 localStorage.setItem('jwtToken : ', response.data.jwtToken);
                 showToastMessage("Registration Successful")
+                navigate('/')
             }
         } catch (error) {
             console.log('registration failed : ', error);
