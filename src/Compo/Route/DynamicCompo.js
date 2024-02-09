@@ -62,9 +62,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '../Store/Store';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBolt, faCartShopping, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faTag } from '@fortawesome/free-solid-svg-icons';
 
-const DynamicCompo = ({ searchResults }) => {
+const DynamicCompo = ({ searchResults,addToCart }) => {
   const { id } = useParams();
   const [contextData] = useContext(Store);
   const [product, setProduct] = useState(null);
@@ -85,6 +85,10 @@ const DynamicCompo = ({ searchResults }) => {
   if (!product) {
     return <div>No product found</div>;
   }
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+  };
 
   return (
     <>
@@ -109,10 +113,11 @@ const DynamicCompo = ({ searchResults }) => {
           </div>
         </div>
         <div className='dynmparentcart'>
-          <NavLink to={`/cart/${product.id}`}><div className='dynmaddcart' onClick={() => navigate('/cart')}><FontAwesomeIcon className='icon3 cartsmall' icon={faCartShopping}/>ADD TO CART</div></NavLink>
-          <NavLink to={`/cart/${product.id}`}>
-            <div className='dynmbuynow' onClick={() => navigate('/cart')}><FontAwesomeIcon icon={faBolt} />BUY NOW</div>
-          </NavLink>
+          <NavLink>
+            <div className='dynmaddcart' onClick={() => handleAddToCart(product)}><FontAwesomeIcon className='icon3 cartsmall' icon={faCartShopping}/>ADD TO CART</div></NavLink>
+          {/* <NavLink>
+            <div className='dynmbuynow' onClick={handleOrderPlaced}><FontAwesomeIcon icon={faBolt} />BUY NOW</div>
+          </NavLink> */}
         </div>
       </div>
       <div id='dynmbtm'>

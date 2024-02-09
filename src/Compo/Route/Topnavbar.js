@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faCircleUser, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import UserDetails from './Username';
+// import axios from 'axios'
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
 const Topnavbar = () => {
-    const [searchQuery, setSearchQuery] = useState('');
+//     const [searchTerm, setSearchTerm] = useState('');
+//   const [searchResults, setSearchResults] = useState([]);
     const navigate = useNavigate();
 
     // logout button 
@@ -28,11 +30,14 @@ const Topnavbar = () => {
         navigate('/login');
     };
 
-    const handleSearch = () => {
-        // Perform search action, e.g., navigate to search results page with searchQuery
-        // navigate(`/search?q=${searchQuery}`);
-        navigate(`/dynamic/${searchQuery}`);
-    };
+    // const handleSearch = async () => {
+    //     try {
+    //       const response = await axios.get(`https://ecommercebackend-ptf5.onrender.com/pages/log/data?name=${searchTerm}`);
+    //       setSearchResults(response.data);
+    //     } catch (error) {
+    //       console.error('Error searching products:', error);
+    //     }
+    //   };
 
     return (
         <>
@@ -41,22 +46,22 @@ const Topnavbar = () => {
                     <img className='logo' src={require('../Imageh/ISHOPBUFFER.png')} alt="logoimage" />
                 </div>
                 <div className='topnavbarright'>
-                    <div className='topnavbarsearch'>
+                    {/* <div className='topnavbarsearch'>
                         <input
                             className='topnavbarsearch1'
                             placeholder='Search Here.....'
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
+                            value={searchTerm}
+                            onChange={(e) => searchTerm(e.target.value)}
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter') {
-                                    handleSearch();
+                                 handleSearch()
                                 }
                             }}
                         />
                         <div id='searchbtm' onClick={handleSearch}>
                             <FontAwesomeIcon id='searchbtm' icon={faSearch} />
                         </div>
-                    </div>
+                    </div> */}
                     <div className='navbaricon'>
                         <div className='icon21' onClick={handleLoginRegister}>
                             <FontAwesomeIcon className='icon2' icon={faCircleUser} /><UserDetails/>
