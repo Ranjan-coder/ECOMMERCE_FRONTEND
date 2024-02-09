@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 
+    const [firstname,setFirstname] = useState('')
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const navigate = useNavigate()
@@ -20,6 +21,7 @@ const Login = () => {
         try{
             // const response = 
             await axios.post('https://ecommercebackend-ptf5.onrender.com/pages/log/login',{
+                firstname:firstname,
                 email:email,
                 password:password
             })
@@ -48,7 +50,8 @@ const Login = () => {
 
   return (
     <div className='logindetails'>
-    <div>LOGIN DETAILS</div>
+    {/* <div>LOGIN DETAILS</div> */}
+    <div>Name : <input className='inputfield' type='text' value={firstname} name='firstname' placeholder='Enter your name' required onChange={(e)=>setFirstname(e.target.value)}/></div>
     <div>Email : <input className='inputfield' type='email' value={email} name='email' placeholder='Enter your email' required onChange={(e)=>setEmail(e.target.value)}/></div>
     <div>Password : <input type='password' className='inputfield' name='password' value={password} placeholder='Enter your password' required onChange={(e)=>setPassword(e.target.value)}/></div>
     <button className='submit' onClick={handleLogin}>SUBMIT</button>

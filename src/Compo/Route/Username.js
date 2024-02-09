@@ -9,21 +9,16 @@ function UserDetails() {
     console.log(token);
     if (token) {
       const decoded = jwtDecode(token);
+      console.log(decoded);
       setUser(decoded);
     }
   }, []);
 
-  if (user) {
-    return (
-      <div>
-        <h1>User Details</h1>
-        <p>Name: {user.firstname}</p>
-        <p>Email: {user.email}</p>
-      </div>
-    );
-  } else {
-    return <div>No user details available.</div>;
-  }
+  return (
+    <div>
+      {user ? (<p>{user.firstname}</p>) : (<p>User</p>)}
+    </div>
+  );
 }
 
 export default UserDetails;

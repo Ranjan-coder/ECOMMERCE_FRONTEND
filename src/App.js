@@ -6,8 +6,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import GradientBufferBar from './Compo/Route/BufferGradient';
 import Topnavbar from './Compo/Route/Topnavbar';
 import HamburgerMenuCmp from './Compo/Route/HamBurgerMenu';
-import UserDetails from './Compo/Route/Username';
-
 
 
 function App() {
@@ -35,8 +33,6 @@ function App() {
       <Topnavbar/>
       <RouteCompo />
       <FooterCmp />
-      <UserDetails/>
-
     </div>
   );
 }

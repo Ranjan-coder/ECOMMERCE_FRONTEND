@@ -170,7 +170,7 @@ const Cart = ({ cartItems, setCartItems }) => {
   }, [cartItems]);
 
   useEffect(() => {
-    const jwtToken = localStorage.getItem('jwtToken : ');
+    const jwtToken = localStorage.getItem('jwtToken');
     if (!jwtToken) {
       navigate('/login');
     } else {
